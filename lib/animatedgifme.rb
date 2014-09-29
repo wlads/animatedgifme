@@ -1,6 +1,10 @@
 require_relative "animatedgifme/version"
 require "httparty"
 
+# sample use (TODO: rdoc)
+# Animatedgifme.find(1060)
+# Animatedgifme.tagged("cat")
+# Animatedgifme.random("cat") # alias tagged
 module Animatedgifme
   include HTTParty
   base_uri "animatedgif.me"
@@ -22,9 +26,3 @@ module Animatedgifme
   		response.parsed_response["url"]
   	end
 end
-
-
-# sample use
-# Animatedgifme.find(1060)
-# Animatedgifme.tagged("cat")
-# Animatedgifme.random("cat") # alias tagged
